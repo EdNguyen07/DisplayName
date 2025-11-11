@@ -15,3 +15,9 @@ String name2 = '';
     				name2 += (name2 != '' ? ', ' : '') + myAccount.LastName;
 				}
 System.debug('Full Name: ' + name2);
+
+// Applicant last, first, middle
+        String name = (myAccount.LastName != null ? myAccount.LastName : '') +
+              (myAccount.FirstName != null ? (myAccount.LastName != null ? ', ' : '') + myAccount.FirstName : '') +
+              (myAccount.MiddleName != null ? ( (myAccount.LastName != null || myAccount.FirstName != null) ? ', ' : '' ) + myAccount.MiddleName : '');
+System.debug('Full Name: ' + name);
